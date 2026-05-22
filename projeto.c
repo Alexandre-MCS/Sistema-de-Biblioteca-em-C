@@ -23,27 +23,26 @@ int carregar_livros(struct Livros livros[]){
     fclose(arquivo);
     return i; //retorna quantidade de livros carregados
 }
-void adicionar_livros(struct Livros livros[], int *total){ //total deve ser um ponteiro para que seja possivel
-    if(*total >= max_livros){                              //modificar o valor da variavel que esta no int main
+void adicionar_livros(struct Livros livros[], int *total){ // total deve ser um ponteiro para que seja possivel
+    if(*total >= max_livros){                              // modificar o valor da variavel que esta no int main
         printf("memoria do sistema esta cheia, nao eh possivel adicionar mais livros.\n");
         return; //return; encerra o codigo
     }
     printf("\n---CADASTRAR NOVO LIVRO---\n");
     int c;
-    while((c = getchar()) != '\n' && c != EOF);//le tudo ate chegar no fim ou apertar 'enter'
+    while((c = getchar()) != '\n' && c != EOF);// descarta caracteres que tenham ficado no buffer do teclado evitando erro no scanf
     printf("digite codigo do livro: ");
     scanf("%d", &livros[*total].codigo);
     printf("digite titulo: ");
-    scanf(" %[^\n]", livros[*total].titulo); //espaco antes do '%' evita erro no terminal
-    printf("digite ano de publicacao: ");
+    scanf(" %[^\n]", livros[*total].titulo); // espaco antes do '%' evita erro no terminal
+    printf("digite ano de publicacao: ");   // %[^\n] le ate uma quebra de linha, permitindo espaços no titulo
     scanf("%d", &livros[*total].ano);
     printf("digite quantidade de livros: ");
     scanf("%d", &livros[*total].quantidade);
         
     (*total)++;
-
     printf("\nLIVRO CADASTRADO COM SUCESSO!\n");
-    printf("total: %d\n", *total);
+    printf("total: %d\n", *total); //mostra quantos livros foram cadastrados
 }
 void imprimir_livros(struct Livros livros[], int total){
     if(total == 0){
@@ -63,8 +62,8 @@ void ordenar_e_imprimir(struct Livros livros[], int total){
         printf("nao possui livro cadastrado.\n");
         return;
     }
-    struct Livros temp; //temp eh um variavel temporaria
-    for(int i = 0; i < total - 1; i++){ //bubblesort para ordenar livros por ano
+    struct Livros temp; // temp eh um variavel temporaria
+    for(int i = 0; i < total - 1; i++){ // bubblesort para ordenar livros por ano
         for(int j = 0; j < total - i - 1; j++){ // -i evita comparacao
             if(livros[j].ano > livros[j + 1].ano){ 
             temp = livros[j];
