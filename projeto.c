@@ -12,7 +12,7 @@ struct Livros{
 };
 int carregar_livros(struct Livros livros[]){
     FILE *arquivo = fopen("livros.txt","r");
-    if(arquivo == NULL){ //NULL significa o mesmo que 'nulo'
+    if(arquivo == NULL){ 
         printf("erro ao abrir aquivo 'livros.txt'.\n");
         return 0;
     }
@@ -21,7 +21,7 @@ int carregar_livros(struct Livros livros[]){
         i++;
     }
     fclose(arquivo);
-    return i; // retorna quantidade de livros carregados
+    return i; //retorna quantidade de livros carregados
 }
 void adicionar_livros(struct Livros livros[], int *total){ //total deve ser um ponteiro para que seja possivel
     if(*total >= max_livros){                              //modificar o valor da variavel que esta no int main
@@ -65,7 +65,7 @@ void ordenar_e_imprimir(struct Livros livros[], int total){
     }
     struct Livros temp; //temp eh um variavel temporaria
     for(int i = 0; i < total - 1; i++){ //bubblesort para ordenar livros por ano
-        for(int j = 0; j < total - i - 1; j++){ //- i evita comparacao
+        for(int j = 0; j < total - i - 1; j++){ // -i evita comparacao
             if(livros[j].ano > livros[j + 1].ano){ 
             temp = livros[j];
             livros[j] = livros[j + 1];
