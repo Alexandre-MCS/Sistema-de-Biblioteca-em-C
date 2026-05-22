@@ -52,7 +52,7 @@ Crie um arquivo chamado livros.txt no mesmo diretório do código-fonte. O forma
 Abra o terminal na pasta do projeto e execute o seguinte comando:
 
 ```bash
-gcc -o biblioteca main.c
+gcc -o biblioteca projeto.c
 ```
 
 ### Passo 3: Executar o programa
