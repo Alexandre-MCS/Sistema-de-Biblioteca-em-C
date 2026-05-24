@@ -17,7 +17,7 @@ Uso de Memória Engessado: O sistema utiliza um vetor com limite máximo hardcod
 
 Baixo Desempenho de Ordenação e Busca: Utiliza Bubble Sort e busca linear. Inadequado para volumes reais de dados.
 
-Entrada de Strings: A leitura de títulos com scanf(" %[^\n]") funciona corretamente, mas pode gerar inconsistências se o arquivo de dados contiver espaços em títulos (no carregamento inicial, o fscanf usa %s e só lê até o primeiro espaço).
+Entrada de Strings: A leitura de títulos com scanf("%s") funciona corretamente, mas não permite espaços no titulo.
 
 🛠️ Estrutura do Código
 O código foi dividido nas seguintes funções:
