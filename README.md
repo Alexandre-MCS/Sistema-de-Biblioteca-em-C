@@ -24,7 +24,7 @@ O código foi dividido nas seguintes funções:
 
 carregar_livros: Manipulação de arquivos (FILE, fopen, fscanf) para obtenção de dados.
 
-adicionar_livros: Entrada de dados com tratamento de buffer (getchar).
+adicionar_livros: Entrada de dados.
 
 imprimir_livros: Exibição formatada dos dados na tela.
 

@@ -33,8 +33,6 @@ void adicionar_livros(struct Livros livros[], int *total){ // total deve ser um 
         return; //return; encerra a função e volta pro chamador
     }
     printf("\n---CADASTRAR NOVO LIVRO---\n");
-    int c;
-    while((c = getchar()) != '\n');// limpa o buffer do teclado evitando erro no scanf
     printf("digite codigo do livro: ");
     scanf("%d", &livros[*total].codigo);
     printf("digite titulo: ");
